@@ -154,7 +154,7 @@ router.get(
       if (page && size) {
         page = Number(page);
         size = Number(size);
-        console.log(page, size);
+        (page, size);
       }
 
       limit = size;
