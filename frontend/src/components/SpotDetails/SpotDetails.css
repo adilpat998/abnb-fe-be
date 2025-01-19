@@ -1,0 +1,232 @@
+/* Main Container */
+.spot-details {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Title and Location */
+.spot-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.spot-location {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Images Section */
+.spot-images {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.main-image {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.secondary-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 40%;
+}
+
+.secondary-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Combined White Box for Description, Hosted By, and Reservation */
+.description-host-reservation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+/* Description Section */
+.description {
+    flex: 2;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.description h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Right Side: Hosted By + Reservation Section */
+.host-reservation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Hosted By Section */
+.host-details {
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.host-details h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.host-details p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Reservation Section */
+.reservation-section {
+    background-color: #fff; /* Matches the white box */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-and-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+}
+
+.night {
+    font-size: 16px;
+    color: #555;
+}
+
+.reviews {
+    font-size: 16px;
+    color: #555;
+}
+
+.reserve-button {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.reserve-button:hover {
+    background-color: #e04e53;
+}
+/* Reviews Section */
+.reviews-section {
+    margin-top: 32px;
+    padding: 16px;
+    background-color: #fff; /* White background for the reviews section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Reviews Section Title */
+.reviews-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Individual Review */
+/* Scoped Reviews Section */
+.reviews-section .review {
+    background: linear-gradient(to left, rgb(255, 255, 255), rgb(187, 0, 0)); /* Horizontal gradient */
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for individual reviews */
+    color: #000000; /* Ensure text is readable on the gradient */
+    position: relative; /* Enable absolute positioning for child elements */
+}
+
+.reviews-section .review-header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #362727;
+    margin-bottom: 8px;
+}
+
+.reviews-section .review p {
+    font-size: 16px;
+    color: #1a1919;
+    margin-bottom: 40px; /* Add spacing to ensure text does not overlap the button */
+}
+
+/* Scoped Delete Review Button */
+.reviews-section .delete-review-button {
+    background-color: #ff5a5f; /* Match primary button color */
+    color: white; /* Button text color */
+    padding: 10px 16px; /* Similar padding */
+    font-size: 14px; /* Match font size with other buttons */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Consistent rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    position: absolute; /* Position relative to the review box */
+    bottom: 16px; /* Distance from the bottom edge */
+    right: 16px; /* Distance from the right edge */
+}
+
+/* Hover and active states */
+.reviews-section .delete-review-button:hover {
+    background-color: #e04e53; /* Slightly darker shade on hover */
+}
+
+.reviews-section .delete-review-button:active {
+    background-color: #d04448; /* Even darker shade on active */
+}
+
+/* Disabled state (if needed) */
+.reviews-section .delete-review-button:disabled {
+    background-color: #ccc; /* Light gray for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor */
+    color: #666; /* Dim text color */
+}

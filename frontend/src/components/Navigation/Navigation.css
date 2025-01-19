@@ -1,22 +1,33 @@
 /* General navigation styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 0.5rem 1rem;
-    color: white;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-left {
+  flex: 1;
+  font-size: 20px;
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar-home-icon {
+  height: 40px;
+  cursor: pointer;
+}
+
+
   
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-  }
+ 
+ 
   
-  .navbar a:hover {
-    text-decoration: underline;
-  }
   
   /* Dropdown menu styles */
   .profile-dropdown {

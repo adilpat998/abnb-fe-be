@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { FaUserCircle } from 'react-icons/fa';
+import { PiUserCircleLight } from "react-icons/pi";
 import * as sessionActions from '../../store/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
 import LoginFormModal from '../LoginFormModal/LoginFormModal';
@@ -43,7 +43,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={toggleMenu}>
-        <FaUserCircle />
+      <PiUserCircleLight  size={30}/>
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
