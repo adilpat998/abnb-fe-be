@@ -13,7 +13,7 @@ module.exports = {
     options.tableName = 'Users';
     await User.bulkCreate([
       {
-        id: 1, // Ensure the id matches foreign key references
+        
         firstName: 'Brian',
         lastName: 'Rodriguez',
         email: 'demo@user.io',
@@ -23,7 +23,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 2,
+        
         firstName: 'Tyson',
         lastName: 'Mcdowell',
         email: 'user1@user.io',
@@ -33,7 +33,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 3,
+        
         firstName: 'Will',
         lastName: 'Duffy',
         email: 'user2@user.io',
@@ -43,7 +43,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 4,
+        
         firstName: 'Emily',
         lastName: 'Stone',
         email: 'emily@user.io',
@@ -53,7 +53,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 5,
+        
         firstName: 'Jake',
         lastName: 'Johnson',
         email: 'jake@user.io',
@@ -63,7 +63,6 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 6,
         firstName: 'Sophia',
         lastName: 'Martinez',
         email: 'sophia@user.io',
@@ -73,7 +72,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 7,
+       
         firstName: 'Liam',
         lastName: 'Taylor',
         email: 'liam@user.io',
@@ -83,7 +82,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id: 8,
+        
         firstName: 'Olivia',
         lastName: 'Brown',
         email: 'olivia@user.io',
