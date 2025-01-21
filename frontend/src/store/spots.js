@@ -11,6 +11,13 @@ const setSpots = (spots) => {
   };
 };
 
+const DELETE_REVIEW = 'spots/deleteReview';
+
+// Action creator to delete a review
+const deleteReview = (reviewId) => ({
+  type: DELETE_REVIEW,
+  reviewId,
+});
 // Thunk action to fetch the spots from the API
 export const fetchSpots = () => async (dispatch) => {
     try {
@@ -23,22 +30,39 @@ export const fetchSpots = () => async (dispatch) => {
     }
   };
   
+  export const deleteReviewThunk = (reviewId, spotId) => async (dispatch) => {
+    try {
+      await csrfFetch(`/api/reviews/${reviewId}`, { method: 'DELETE' });
   
+      // Dispatch action to remove the review from state
+      dispatch(deleteReview(reviewId));
   
-  
-const spotsReducer = (state = { spots: [] }, action) => {
-    switch (action.type) {
-      case SET_SPOTS: // Ensure this matches the action creator
-        console.log('Reducer updating spots:', action.spots); // Debugging
-        return { ...state, spots: action.spots };
-      default:
-        return state;
+      // Optionally refetch updated spot details if necessary
+      dispatch(fetchSpots());
+    } catch (error) {
+      console.error('Failed to delete review:', error);
     }
   };
   
-
-
   
+// Update reducer to handle DELETE_REVIEW
+const spotsReducer = (state = { spots: [] }, action) => {
+  switch (action.type) {
+    case SET_SPOTS:
+      return { ...state, spots: action.spots };
 
-// Export the reducer as default
+    case DELETE_REVIEW:
+      return {
+        ...state,
+        spots: state.spots.map((spot) => ({
+          ...spot,
+          Reviews: spot.Reviews.filter((review) => review.id !== action.reviewId),
+        })),
+      };
+
+    default:
+      return state;
+  }
+};
+
 export default spotsReducer;

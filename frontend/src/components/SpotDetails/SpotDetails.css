@@ -107,7 +107,7 @@
 
 /* Reservation Section */
 .reservation-section {
-    background-color: #fff; /* Matches the white box */
+    background-color: #fff;
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -156,13 +156,14 @@
 .reserve-button:hover {
     background-color: #e04e53;
 }
+
 /* Reviews Section */
 .reviews-section {
     margin-top: 32px;
     padding: 16px;
-    background-color: #fff; /* White background for the reviews section */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Reviews Section Title */
@@ -173,15 +174,14 @@
 }
 
 /* Individual Review */
-/* Scoped Reviews Section */
 .reviews-section .review {
-    background: linear-gradient(to left, rgb(255, 255, 255), rgb(187, 0, 0)); /* Horizontal gradient */
+    background: linear-gradient(to left, rgb(255, 255, 255), rgb(187, 0, 0));
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for individual reviews */
-    color: #000000; /* Ensure text is readable on the gradient */
-    position: relative; /* Enable absolute positioning for child elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    position: relative;
 }
 
 .reviews-section .review-header {
@@ -196,37 +196,120 @@
 .reviews-section .review p {
     font-size: 16px;
     color: #1a1919;
-    margin-bottom: 40px; /* Add spacing to ensure text does not overlap the button */
+    margin-bottom: 40px;
 }
 
 /* Scoped Delete Review Button */
 .reviews-section .delete-review-button {
-    background-color: #ff5a5f; /* Match primary button color */
-    color: white; /* Button text color */
-    padding: 10px 16px; /* Similar padding */
-    font-size: 14px; /* Match font size with other buttons */
-    border: none; /* Remove default border */
-    border-radius: 8px; /* Consistent rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    position: absolute; /* Position relative to the review box */
-    bottom: 16px; /* Distance from the bottom edge */
-    right: 16px; /* Distance from the right edge */
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
 }
 
-/* Hover and active states */
 .reviews-section .delete-review-button:hover {
-    background-color: #e04e53; /* Slightly darker shade on hover */
+    background-color: #e04e53;
 }
 
 .reviews-section .delete-review-button:active {
-    background-color: #d04448; /* Even darker shade on active */
+    background-color: #d04448;
 }
 
-/* Disabled state (if needed) */
 .reviews-section .delete-review-button:disabled {
-    background-color: #ccc; /* Light gray for disabled state */
-    cursor: not-allowed; /* Not-allowed cursor */
-    color: #666; /* Dim text color */
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+/* Delete Confirmation Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for modal appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal Title */
+.modal-content h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+/* Modal Description */
+.modal-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+/* Modal Buttons */
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* Delete Button */
+.modal-content .delete-btn {
+    background-color: #ff5a5f;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .delete-btn:hover {
+    background-color: #e04e53;
+}
+
+/* Cancel Button */
+.modal-content .cancel-btn {
+    background-color: #666;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .cancel-btn:hover {
+    background-color: #555;
 }
