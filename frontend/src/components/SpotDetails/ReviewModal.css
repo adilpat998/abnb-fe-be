@@ -20,7 +20,7 @@
     animation: fadeIn 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Add space between elements */
+    gap:px; /* Add space between elements */
   }
   
   @keyframes fadeIn {
@@ -45,7 +45,7 @@
     width: 100%; /* Make sure the textarea stays within the modal */
     max-width: 100%; /* Ensure it doesn't exceed the modal's width */
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
@@ -63,7 +63,8 @@
     display: flex;
     justify-content: center;
     gap: 8px;
-    font-size: 24px; /* Adjust star size */
+    margin-bottom: 10px;
+    font-size: 40px; /* Adjust star size */
     cursor: pointer;
   }
   

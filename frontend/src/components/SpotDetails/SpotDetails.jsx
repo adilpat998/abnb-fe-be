@@ -59,16 +59,21 @@ function SpotDetails() {
       <SpotImages images={spot.SpotImages} name={spot.name} />
 
       {/* Reservation Section */}
-      <ReservationSection spot={spot} />
+      <ReservationSection 
+  spot={spot} 
+  isOwner={spot.ownerId === currentUserId} 
+  numReviews={reviews.length}
+/>
 
       {/* Reviews Section */}
       <ReviewsSection
         reviews={reviews}
         currentUserReview={currentUserReview}
-        setReviews={setReviews}
-        setCurrentUserReview={setCurrentUserReview}
         fetchSpotDetails={fetchSpotDetails} // Pass the fetch function
+        spotOwnerId={spot.ownerId}// Pass the spot owner ID here
+        spotId={spot?.id} 
       />
+
     </div>
   );
 }

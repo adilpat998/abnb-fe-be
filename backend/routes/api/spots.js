@@ -13,13 +13,11 @@ const validateSpotFields = [
   check("state").notEmpty().withMessage("State is required"),
   check("country").notEmpty().withMessage("Country is required"),
   check("lat")
-    .notEmpty()
-    .withMessage("Latitude must be within -90 and 90")
+    .optional({ nullable: true })
     .isFloat({ min: -90, max: 90 })
     .withMessage("Latitude must be within -90 and 90"),
   check("lng")
-    .notEmpty()
-    .withMessage("Longitude must be within -180 and 180")
+    .optional({ nullable: true })
     .isFloat({ min: -180, max: 180 })
     .withMessage("Longitude must be within -180 and 180"),
   check("name")
@@ -34,6 +32,7 @@ const validateSpotFields = [
     .isFloat({ min: 0 })
     .withMessage("Price per day must be a positive number"),
 ];
+
 
 const validateQueryParams = [
   query("page")

@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
+import ManageSpots from './components/ManageSpots/ManageSpots';
 import HomeSpots from './components/HomeSpots/HomeSpots';
-import SpotDetails from './components/SpotDetails/SpotDetails'; // Import SpotDetails component
+import SpotDetails from './components/SpotDetails/SpotDetails'; 
+import UpdateSpotForm from './components/ManageSpots/UpdateSpotForm';
+import CreateSpotForm from './components/CreateSpot/CreateSpotForm'; // Import the new CreateSpotForm component
 import * as sessionActions from './store/session';
 
 function Layout() {
@@ -37,11 +40,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomeSpots />, // Render HomeSpots on the home page
+        element: <HomeSpots />, 
       },
       {
         path: '/spots/:id',
-        element: <SpotDetails />, // Render SpotDetails when visiting /spots/:id
+        element: <SpotDetails />, 
+      },
+      {
+        path: '/spots/new',
+        element: <CreateSpotForm />, // New route for creating a spot
+      },
+      {
+        path: "/manage-spots",
+        element: <ManageSpots />, // New route for Manage Spots page
+      },
+      {
+        path: "/spots/:spotId/edit",
+        element: <UpdateSpotForm />, // New route for edit Spots page
       },
     ],
   },

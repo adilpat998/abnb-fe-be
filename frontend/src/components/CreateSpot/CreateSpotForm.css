@@ -1,0 +1,81 @@
+/* Create Spot Form Styles */
+.error-message { 
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.create-spot-container {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Increased size for description text area */
+textarea {
+  height: 150px; 
+  resize: none;
+}
+
+/* Flexbox for City and State alignment */
+.inline-inputs {
+  display: flex;
+  gap: 20px;  /* Increased gap for better spacing */
+  justify-content: space-between;
+}
+
+/* Ensures both city and state inputs take equal width */
+.inline-inputs div {
+  flex: 1;
+}
+
+button.create-spot-button {
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button.create-spot-button:hover {
+  background-color: #e04e53;
+}
+
+/* Optional: Center form elements for better look */
+.create-spot-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 768px) {
+  .create-spot-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .inline-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

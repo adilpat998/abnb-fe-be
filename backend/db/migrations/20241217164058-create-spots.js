@@ -36,11 +36,14 @@ module.exports = {
           type: Sequelize.STRING,
         },
         lat: {
-          type: Sequelize.DECIMAL,
-        },
-        lng: {
-          type: Sequelize.DECIMAL,
-        },
+  type: Sequelize.DECIMAL,
+  allowNull: true,  // Ensure it's optional in the database
+},
+lng: {
+  type: Sequelize.DECIMAL,
+  allowNull: true,  // Ensure it's optional in the database
+},
+
         name: {
           type: Sequelize.STRING,
         },

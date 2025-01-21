@@ -1,0 +1,15 @@
+.create-spot-link {
+    color: #007bff; /* Blue color */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .create-spot-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+  }
+  
