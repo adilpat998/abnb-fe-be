@@ -6,26 +6,26 @@ import ReviewsSection from "./ReviewsSection";
 import SpotImages from "./SpotImages";
 import ReservationSection from "./ReservationSection";
 import "./SpotDetails.css";
+import { useCallback } from "react";
 
 function SpotDetails() {
-  const { id } = useParams(); // Get the spot ID from the URL
-  const currentUserId = useSelector((state) => state.session.user?.id); // Get the current user's ID
+  const { id } = useParams();
+  const currentUserId = useSelector((state) => state.session.user?.id);
   const [spot, setSpot] = useState(null);
   const [reviews, setReviews] = useState([]);
-  const [currentUserReview, setCurrentUserReview] = useState(null); // Track current user's review
+  const [currentUserReview, setCurrentUserReview] = useState(null);
+  
 
-  // Fetch spot details and reviews
-  const fetchSpotDetails = async () => {
+  const fetchSpotDetails = useCallback(async () => {
     try {
       const spotResponse = await csrfFetch(`/api/spots/${id}`);
       const spotData = await spotResponse.json();
       setSpot(spotData);
-
+  
       const reviewsResponse = await csrfFetch(`/api/spots/${id}/reviews`);
       const reviewsData = await reviewsResponse.json();
       setReviews(reviewsData.Reviews || []);
-
-      // Set the current user's review, if it exists
+  
       if (currentUserId) {
         const currentReview = reviewsData.Reviews?.find(
           (review) => review.userId === currentUserId
@@ -35,11 +35,12 @@ function SpotDetails() {
     } catch (err) {
       console.error("Failed to fetch spot details or reviews:", err);
     }
-  };
-
+  }, [id, currentUserId]);
+  
   useEffect(() => {
     fetchSpotDetails();
-  }, [id, currentUserId]);
+  }, [fetchSpotDetails]);
+  
 
   if (!spot) {
     return <p>Loading spot details...</p>;
@@ -47,7 +48,6 @@ function SpotDetails() {
 
   return (
     <div className="spot-details">
-      {/* Title and Location */}
       <div>
         <h1 className="spot-title">{spot.name}</h1>
         <p className="spot-location">
@@ -55,25 +55,21 @@ function SpotDetails() {
         </p>
       </div>
 
-      {/* Images Section */}
       <SpotImages images={spot.SpotImages} name={spot.name} />
 
-      {/* Reservation Section */}
       <ReservationSection 
-  spot={spot} 
-  isOwner={spot.ownerId === currentUserId} 
-  numReviews={reviews.length}
-/>
+        spot={spot} 
+        isOwner={spot.ownerId === currentUserId} 
+        numReviews={reviews.length}
+      />
 
-      {/* Reviews Section */}
       <ReviewsSection
         reviews={reviews}
         currentUserReview={currentUserReview}
-        fetchSpotDetails={fetchSpotDetails} // Pass the fetch function
-        spotOwnerId={spot.ownerId}// Pass the spot owner ID here
+        fetchSpotDetails={fetchSpotDetails}
+        spotOwnerId={spot.ownerId}
         spotId={spot?.id} 
       />
-
     </div>
   );
 }

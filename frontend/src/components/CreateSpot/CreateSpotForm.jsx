@@ -25,7 +25,7 @@ function CreateSpotForm() {
   });
   const [errors, setErrors] = useState({});
 
-  // Reset the form and errors when the component unmounts
+  
   useEffect(() => {
     return () => {
       setFormData({
@@ -58,27 +58,67 @@ function CreateSpotForm() {
 
   const validateForm = () => {
     const newErrors = {};
-
-    if (!formData.country) newErrors.country = "Country is required";
-    if (!formData.address) newErrors.address = "Address is required";
-    if (!formData.city) newErrors.city = "City is required";
-    if (!formData.state) newErrors.state = "State is required";
+  
+    if (!formData.country) {
+      newErrors.country = "Country is required";
+    } else if (formData.country.length > 50) {
+      newErrors.country = "Country name must not exceed 50 characters";
+    }
+  
+    if (!formData.address) {
+      newErrors.address = "Address is required";
+    } else if (formData.address.length > 100) {
+      newErrors.address = "Address must not exceed 100 characters";
+    }
+  
+    if (!formData.city) {
+      newErrors.city = "City is required";
+    } else if (formData.city.length > 50) {
+      newErrors.city = "City name must not exceed 50 characters";
+    }
+  
+    if (!formData.state) {
+      newErrors.state = "State is required";
+    } else if (formData.state.length > 50) {
+      newErrors.state = "State name must not exceed 50 characters";
+    }
+  
     if (!formData.description || formData.description.length < 30) {
       newErrors.description = "Description needs a minimum of 30 characters";
+    } else if (formData.description.length > 500) {
+      newErrors.description = "Description must not exceed 500 characters";
     }
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.price) newErrors.price = "Price is required";
-    if (!formData.previewImage) newErrors.previewImage = "Preview image is required";
-
+  
+    if (!formData.name) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.length > 100) {
+      newErrors.name = "Name must not exceed 100 characters";
+    }
+  
+    if (!formData.price) {
+      newErrors.price = "Price is required";
+    } else if (parseFloat(formData.price) < 1) {
+      newErrors.price = "Price must be at least $1";
+    } else if (parseFloat(formData.price) > 10000) {
+      newErrors.price = "Price must not exceed $10,000";
+    }
+  
+    if (!formData.previewImage) {
+      newErrors.previewImage = "Preview image is required";
+    }
+  
     formData.imageUrls.forEach((url, index) => {
       if (url && !url.match(/\.(png|jpg|jpeg)$/)) {
         newErrors[`imageUrl${index}`] = "Image URL must end in .png, .jpg, or .jpeg";
+      } else if (url.length > 255) {
+        newErrors[`imageUrl${index}`] = "Image URL must not exceed 255 characters";
       }
     });
-
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

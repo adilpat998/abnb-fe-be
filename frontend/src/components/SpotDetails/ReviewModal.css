@@ -1,118 +1,118 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
-    z-index: 1000; /* Ensure it is above other content */
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 400px; /* Proportional width */
-    padding: 24px; /* Spacing around content */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    gap:px; /* Add space between elements */
-  }
-  
-  @keyframes fadeIn {
-    from {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 400px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: px;
+}
+
+@keyframes fadeIn {
+  from {
       opacity: 0;
       transform: scale(0.9);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: scale(1);
-    }
   }
-  
-  .modal-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .modal-content textarea {
-    width: 100%; /* Make sure the textarea stays within the modal */
-    max-width: 100%; /* Ensure it doesn't exceed the modal's width */
-    padding: 10px;
-    margin-bottom: 1px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    resize: none;
-    height: 100px;
-    box-sizing: border-box; /* Include padding in the element's width and height */
 }
-  .modal-content textarea:focus {
-    border-color: #ff5a5f;
-    outline: none;
-    box-shadow: 0 0 4px rgba(255, 90, 95, 0.5);
-  }
-  
-  .stars {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    font-size: 40px; /* Adjust star size */
-    cursor: pointer;
-  }
-  
-  .stars .star {
-    color: #ddd; /* Default star color */
-    transition: color 0.3s ease;
-  }
-  
-  .stars .star.filled {
-    color: #ff5a5f; /* Filled star color */
-  }
-  
-  .modal-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  
-  .modal-content button {
-    flex: 1;
-    padding: 10px;
-    background-color: #ff5a5f;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .modal-content button:hover {
-    background-color: #e04e53;
-  }
-  
-  .modal-content button:active {
-    background-color: #d04448;
-  }
-  
-  .modal-content .cancel-button {
-    background-color: #ccc;
-    color: #333;
-  }
-  
-  .modal-content .cancel-button:hover {
-    background-color: #bbb;
-  }
-  
-  .modal-content .cancel-button:active {
-    background-color: #aaa;
-  }
-  
+
+.modal-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.modal-content textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 1px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: none;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.modal-content textarea:focus {
+  border-color: #ff5a5f;
+  outline: none;
+  box-shadow: 0 0 4px rgba(255, 90, 95, 0.5);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.stars .star {
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.stars .star.filled {
+  color: #ff5a5f;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal-content button {
+  flex: 1;
+  padding: 10px;
+  background-color: #ff5a5f;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #e04e53;
+}
+
+.modal-content button:active {
+  background-color: #d04448;
+}
+
+.modal-content .cancel-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-content .cancel-button:hover {
+  background-color: #bbb;
+}
+
+.modal-content .cancel-button:active {
+  background-color: #aaa;
+}

@@ -125,7 +125,7 @@ function UpdateSpotForm() {
           );
 
         await Promise.all(imageRequests);
-        navigate(`/spots/${spotId}`); // Redirect to spot details after update
+        navigate(`/spots/${spotId}`); 
       } else {
         const errorData = await spotResponse.json();
         setErrors(errorData.errors || {});

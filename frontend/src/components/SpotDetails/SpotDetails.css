@@ -1,4 +1,3 @@
-/* Main Container */
 .spot-details {
     max-width: 1000px;
     margin: 0 auto;
@@ -7,7 +6,6 @@
     color: #333;
 }
 
-/* Title and Location */
 .spot-title {
     font-size: 32px;
     font-weight: bold;
@@ -22,7 +20,6 @@
     margin-bottom: 20px;
 }
 
-/* Images Section */
 .spot-images {
     display: flex;
     gap: 16px;
@@ -50,7 +47,6 @@
     border-radius: 8px;
 }
 
-/* Combined White Box for Description, Hosted By, and Reservation */
 .description-host-reservation {
     display: flex;
     justify-content: space-between;
@@ -63,7 +59,6 @@
     margin-bottom: 24px;
 }
 
-/* Description Section */
 .description {
     flex: 2;
     font-size: 16px;
@@ -77,7 +72,6 @@
     margin-bottom: 8px;
 }
 
-/* Right Side: Hosted By + Reservation Section */
 .host-reservation {
     flex: 1;
     display: flex;
@@ -85,7 +79,6 @@
     gap: 16px;
 }
 
-/* Hosted By Section */
 .host-details {
     background-color: #fff;
     padding: 8px 16px;
@@ -105,7 +98,6 @@
     line-height: 1.4;
 }
 
-/* Reservation Section */
 .reservation-section {
     background-color: #fff;
     padding: 16px;
@@ -157,7 +149,6 @@
     background-color: #e04e53;
 }
 
-/* Reviews Section */
 .reviews-section {
     margin-top: 32px;
     padding: 16px;
@@ -166,14 +157,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Reviews Section Title */
 .reviews-section h3 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 16px;
 }
 
-/* Individual Review */
 .reviews-section .review {
     background: linear-gradient(to left, rgb(255, 255, 255), rgb(187, 0, 0));
     padding: 16px;
@@ -199,7 +188,6 @@
     margin-bottom: 40px;
 }
 
-/* Scoped Delete Review Button */
 .reviews-section .delete-review-button {
     background-color: #ff5a5f;
     color: white;
@@ -229,7 +217,6 @@
     color: #666;
 }
 
-/* Delete Confirmation Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -243,7 +230,6 @@
     z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
     background-color: #fff;
     border-radius: 8px;
@@ -254,7 +240,6 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Animation for modal appearance */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -266,7 +251,6 @@
     }
 }
 
-/* Modal Title */
 .modal-content h3 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -274,14 +258,12 @@
     color: #333;
 }
 
-/* Modal Description */
 .modal-content p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 24px;
 }
 
-/* Modal Buttons */
 .modal-content button {
     width: 100%;
     padding: 12px;
@@ -292,7 +274,6 @@
     margin-bottom: 10px;
 }
 
-/* Delete Button */
 .modal-content .delete-btn {
     background-color: #ff5a5f;
     color: white;
@@ -303,7 +284,6 @@
     background-color: #e04e53;
 }
 
-/* Cancel Button */
 .modal-content .cancel-btn {
     background-color: #666;
     color: white;

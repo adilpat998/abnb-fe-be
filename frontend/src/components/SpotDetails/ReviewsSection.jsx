@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteReviewThunk } from "../../store/spots";
 import ReviewModal from "./ReviewModal";
 import "./SpotDetails.css";
+import { csrfFetch } from "../../store/csrf";
+
 
 function ReviewsSection({
   reviews,
@@ -47,15 +49,33 @@ function ReviewsSection({
       console.error("Error: spotId is undefined.");
       return;
     }
-
-    await csrfFetch(`/api/spots/${spotId}/reviews`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newReview),
-    });
-
-    await fetchSpotDetails();
-    setIsModalOpen(false);
+  
+    // Validation for review length
+    const minReviewLength = 5; // Minimum characters for a review
+    const maxReviewLength = 500; // Maximum characters for a review
+  
+    if (newReview.review.length < minReviewLength) {
+      alert(`Review must be at least ${minReviewLength} characters long.`);
+      return;
+    }
+  
+    if (newReview.review.length > maxReviewLength) {
+      alert(`Review must not exceed ${maxReviewLength} characters.`);
+      return;
+    }
+  
+    try {
+      await csrfFetch(`/api/spots/${spotId}/reviews`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newReview),
+      });
+  
+      await fetchSpotDetails();
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("Failed to post review:", error);
+    }
   };
 
   return (

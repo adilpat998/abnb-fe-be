@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'; 
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import CreateSpotLink from './CreateSpotLink'; // Import the new link component
+import CreateSpotLink from './CreateSpotLink'; 
 import './Navigation.css';
 import homeIcon from '../../images/home.png'
 
@@ -17,7 +17,7 @@ function Navigation({ isLoaded }) {
       </div>
 
       <div className="navbar-right">
-        {isLoaded && sessionUser && <CreateSpotLink />}  {/* Show only when logged in */}
+        {isLoaded && sessionUser && <CreateSpotLink />}  
         {isLoaded && <ProfileButton user={sessionUser} />}
       </div>
     </nav>

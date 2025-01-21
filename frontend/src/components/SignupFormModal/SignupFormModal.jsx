@@ -42,7 +42,7 @@ function SignupFormModal() {
     });
   };
 
-  // Memoize handleClickOutside to prevent re-creation on every render
+  
   const handleClickOutside = useCallback(
     (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -57,7 +57,7 @@ function SignupFormModal() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleClickOutside]); // Add handleClickOutside as a dependency
+  }, [handleClickOutside]); 
 
   return (
     <div className="modal">

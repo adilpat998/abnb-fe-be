@@ -6,7 +6,7 @@ import * as sessionActions from '../../store/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
 import LoginFormModal from '../LoginFormModal/LoginFormModal';
 import SignupFormModal from '../SignupFormModal/SignupFormModal';
-import './ProfileButton.css'; // Add this for custom styling
+import './ProfileButton.css'; 
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function ProfileButton({ user }) {
   const ulRef = useRef();
 
   const toggleMenu = (e) => {
-    e.stopPropagation(); // Prevents menu from closing when clicking inside
+    e.stopPropagation(); 
     setShowMenu(!showMenu);
   };
 
@@ -41,10 +41,7 @@ function ProfileButton({ user }) {
     navigate('/');
   };
 
-  const handleManageSpots = () => {
-    navigate('/spots/current'); // Navigate to user's spots page
-    closeMenu();
-  };
+ 
 
   return (
     <div className="profile-button-container">

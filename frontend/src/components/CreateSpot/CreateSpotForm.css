@@ -16,7 +16,7 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
-/* Input and Textarea Styling */
+
 input, textarea {
   width: 100%;
   padding: 10px;
@@ -26,20 +26,20 @@ input, textarea {
   font-size: 1rem;
 }
 
-/* Increased size for description text area */
+
 textarea {
   height: 150px; 
   resize: none;
 }
 
-/* Flexbox for City and State alignment */
+
 .inline-inputs {
   display: flex;
   gap: 20px;  /* Increased gap for better spacing */
   justify-content: space-between;
 }
 
-/* Ensures both city and state inputs take equal width */
+
 .inline-inputs div {
   flex: 1;
 }
@@ -60,14 +60,14 @@ button.create-spot-button:hover {
   background-color: #e04e53;
 }
 
-/* Optional: Center form elements for better look */
+
 .create-spot-container form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Optional: Add media query for responsiveness */
+
 @media (max-width: 768px) {
   .create-spot-container {
     max-width: 100%;

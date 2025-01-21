@@ -1,133 +1,121 @@
-/* Container for all spots */
 .spots-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15%; /* Space between cards */
+  gap: 10%;
+  row-gap: 60px;
   justify-content: center;
   padding: 16px;
 }
 
-/* Individual spot card */
 .spot-card {
-  width: 250px; /* Adjust width of the card */
+  width: 250px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   text-align: left;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  position: relative; /* For overlay positioning */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .spot-card:hover {
-  transform: scale(1.05); /* Zoom effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Spot image container */
 .spot-card .spot-image {
   width: 100%;
-  height: 200px; /* Fixed height for uniformity */
+  height: 200px;
   overflow: hidden;
-  position: relative; /* For overlay positioning */
+  position: relative;
 }
 
 .spot-card .spot-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure image fits container */
+  object-fit: cover;
 }
 
-/* Spot information container */
 .spot-info {
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Space between text elements */
+  gap: 8px;
 }
 
-/* Spot location */
 .spot-location {
   font-size: 16px;
   font-weight: bold;
   color: #333;
 }
 
-/* Price and Rating container */
 .spot-rating-price {
-  display: flex; /* Align items horizontally */
-  justify-content: space-between; /* Push items to opposite ends */
-  align-items: center; /* Center items vertically */
-  margin-top: 8px; /* Optional spacing above */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
 }
 
-/* Spot price styling */
 .spot-price {
-  font-size: 14px; /* Font size for price */
-  font-weight: bold; /* Bold font for emphasis */
-  color: #222; /* Dark color for price */
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
 }
 
 .night {
   font-weight: normal;
-  color: #555; /* Subtle color for "/ night" */
+  color: #555;
 }
 
-/* Align star and rating number horizontally */
 .spot-rating {
-  align-items: center; /* Vertically center star and text */
-  gap: 4px; /* Add space between the star and the text */
-  font-size: 17px; /* Adjust the font size */
-  color: #f8c200; /* Gold color for the star and rating */
-  font-weight: bold; /* Emphasize the rating */
+  align-items: center;
+  gap: 4px;
+  font-size: 17px;
+  color: #f8c200;
+  font-weight: bold;
 }
 
-/* Star icon styling */
 .star-icon {
-  font-size: 16px; /* Slightly larger star */
-  color: #f8c200; /* Gold color */
+  font-size: 16px;
+  color: #f8c200;
 }
 
-
-/* Spot name overlay (on hover) */
 .spot-card .spot-name-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   padding: 8px 0;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Smooth fade-in */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .spot-card:hover .spot-name-overlay {
-  opacity: 1; /* Show on hover */
+  opacity: 1;
 }
 
-/* Page styles */
 .spots-page {
-  margin-top: 80px; /* Space below navigation */
+  margin-top: 80px;
   padding: 16px;
 }
 
-/* Page heading */
 .spots-page h2 {
   text-align: center;
   font-size: 36px;
   font-weight: 700;
-  color: #2c3e50; /* Base color */
-  margin-bottom: 40px; /* Space below heading */
-  background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff); /* Subtle gradient */
+  color: #2c3e50;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for emphasis */
-  letter-spacing: 1px; /* Spaced-out letters */
-  transition: transform 0.3s ease; /* Optional hover effect */
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
 }

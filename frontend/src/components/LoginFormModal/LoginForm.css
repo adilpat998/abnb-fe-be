@@ -81,8 +81,8 @@ input:focus {
 }
 
 .error-message {
-  color: red;
-  font-size: 14px;
+  color: red !important;
+  font-size: 0.9rem;
   margin-top: 8px;
-  text-align: left;
+  text-align: center;
 }

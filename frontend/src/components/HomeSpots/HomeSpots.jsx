@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import { fetchSpots } from '../../store/spots'; // Import the fetchSpots action
-import './HomeSpots.css'; // CSS for styling the new layout
+import { useNavigate } from 'react-router-dom';
+import { fetchSpots } from '../../store/spots';
+import './HomeSpots.css';
 
 function HomeSpots() {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // React Router navigation hook
+  const navigate = useNavigate();
 
   const spotsArray = useSelector((state) => state.spots.spots);
 
@@ -15,7 +15,7 @@ function HomeSpots() {
   }, [dispatch]);
 
   const handleSpotClick = (id) => {
-    navigate(`/spots/${id}`); // Navigate to the spot details page
+    navigate(`/spots/${id}`);
   };
 
   return (
@@ -27,8 +27,8 @@ function HomeSpots() {
             <div
               key={spot.id}
               className="spot-card"
-              onClick={() => handleSpotClick(spot.id)} // Add click handler
-              style={{ cursor: 'pointer' }} // Add pointer cursor for visual feedback
+              onClick={() => handleSpotClick(spot.id)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="spot-image">
                 <img
@@ -38,7 +38,7 @@ function HomeSpots() {
                   }
                   alt={spot.name}
                 />
-                <div className="spot-name-overlay">{spot.name}</div> {/* Overlay Name */}
+                <div className="spot-name-overlay">{spot.name}</div>
               </div>
               <div className="spot-info">
                 <div className="spot-location">{spot.city}, {spot.state}</div>

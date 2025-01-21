@@ -33,7 +33,7 @@ function ReviewModal({ isOpen, onClose, onSubmit }) {
             <span
               key={star}
               className={`star ${rating >= star ? "filled" : ""}`}
-              onClick={() => setRating(star)} // Handle star selection
+              onClick={() => setRating(star)} 
             >
               ★
             </span>
@@ -49,7 +49,7 @@ function ReviewModal({ isOpen, onClose, onSubmit }) {
         </div>
       </div>
     </div>,
-    document.getElementById("modal-root") // Ensure it mounts in #modal-root
+    document.getElementById("modal-root") 
   );
 }
 
