@@ -61,7 +61,12 @@ function ManageSpots() {
               <p className="spot-location">
                 {spot.city}, {spot.state}
               </p>
-              <p className="spot-price">${spot.price.toFixed(2)} <span>night</span></p>
+              <p className="spot-price">
+  {spot.price && !isNaN(spot.price) 
+    ? `$${Number(spot.price).toFixed(2)}` 
+    : 'Price not available'} 
+  <span>night</span>
+</p>
               <p className="spot-rating">
                 {spot.avgRating ? `★ ${spot.avgRating.toFixed(1)}` : "★ New"}
               </p>
