@@ -2,7 +2,7 @@ import "./SpotDetails.css";
 
 function SpotImages({ images, name }) {
   if (!images || images.length === 0) {
-    return <p>No images available for this spot.</p>;
+    return <p>No images are available for this spot.</p>;
   }
 
   return (

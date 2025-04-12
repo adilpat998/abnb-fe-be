@@ -187,7 +187,7 @@ function CreateSpotForm() {
       <h1>Create a new Spot</h1>
       <form onSubmit={handleSubmit}>
       <h2>Where&apos;s your place located?</h2>
-        <p>Guests will only get your exact address once they booked a reservation.</p>
+        <p>Guests will only get your exact address once they have booked a reservation.</p>
 
         <label>Country</label>
         <input type="text" name="country" value={formData.country} onChange={handleChange} />
